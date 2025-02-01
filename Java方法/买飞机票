@@ -1,0 +1,39 @@
+package hi;
+
+import java.util.Random;
+import java.util.Scanner;
+
+public class test {
+    public static void main(String[] args) {
+        sell(4, 3000, "头等舱");
+
+    }
+
+    public static double sell(int mouth, double price, String cangwei) {
+        if (mouth >= 5 && mouth <= 10) {
+            switch (cangwei) {
+                case "头等舱":
+                    price = price * 0.9;
+                case "经济舱":
+                    price = price * 0.85;
+            }
+        } else {
+            switch (cangwei) {
+                case "头等舱":
+                    price = price * 0.7;
+                    System.out.println("当前选择的舱位:" + cangwei + '\n' + "票价:" + price);
+                    break;
+                case "经济舱":
+                    price = price * 0.65;
+                    System.out.println("当前选择的舱位:" + cangwei + '\n' + "票价:" + price);
+                    break;
+                default:
+                    System.out.println("目前只有经济舱和头等舱 请重新选择 ");
+            }
+        }
+        return price;
+
+    }
+
+
+}
