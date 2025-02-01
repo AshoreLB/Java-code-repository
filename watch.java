@@ -1,0 +1,35 @@
+package hi;
+
+import java.util.Random;
+import java.util.Scanner;
+
+public class watch {
+    public static void main(String[] args) {
+        num(1234);
+    }
+    public static void num(int num){
+        int[] arr = new int[4];
+        //例如1234
+        arr[0] = num/1000;
+        arr[1] = num/100 %10;
+        arr[2] = num/10%10;
+        arr[3] = num%10;
+        System.out.println(arr[1]);
+
+        for (int i = 0; i < arr.length; i++) {
+            arr[i] =(arr[i]+5)%10;
+        }
+
+        //反着输出
+        for (int i = 0, j = arr.length-1 ; i < j; i++,j--) {
+            int temp = arr[j];
+            arr[j] = arr[i];
+            arr[i] = temp;
+        }
+        for (int i = 0; i < arr.length; i++) {
+            System.out.print(arr[i]);
+        }
+    }
+
+
+}
