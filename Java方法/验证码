@@ -1,0 +1,38 @@
+package hi;
+
+import java.util.Random;
+
+public class test {
+    public static void main(String[] args) {
+        System.out.println("四位验证码:" + code(4));
+        System.out.println("三位验证码:" + code(6));
+    }
+
+    public static String code(int length) {
+        String str = "";
+        Random rd = new Random();
+        int ls = rd.nextInt(3);
+        for (int i = 0; i < length; i++) {
+            switch (ls) {
+                case 0:
+                    int num = rd.nextInt(10);
+                    str = str + num;
+                    break;
+                case 1:
+                    char num2 = (char) rd.nextInt(65, 91);
+                    str = str + num2;
+                    break;
+                case 2:
+                    char num3 = (char) rd.nextInt(97, 123);
+                    str = str + num3;
+                    break;
+            }
+        }
+        return str;
+
+
+    }
+
+}
+
+
