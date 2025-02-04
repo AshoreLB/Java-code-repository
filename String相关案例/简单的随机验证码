@@ -1,0 +1,31 @@
+package hi;
+
+import java.util.Random;
+
+public class t {
+    public static void main(String[] args) {
+       //利用string 开发简单的验证码
+        String c = captcha(4);
+        String c1 = captcha(5);
+        System.out.println(c);
+        System.out.println(c1);
+
+    }
+    public static String captcha(int length){
+        String temp = "";
+        String data = "qwertyuiopasdfghjklzxcvbnmQAZWSXEDCRFVTGBYHNUJMIKLOP1234567890";
+        Random rd = new Random();
+
+        for (int i = 0; i < length; i++) {
+            //指定索引的范围 每次 随机一次索引值
+            int index =  rd.nextInt(data.length());
+            //根据索引值 提取指定位置字符串单个的字符
+            char c =data.charAt(index);
+            //拼接
+            temp += c;
+        }return temp;
+    }
+
+
+
+}
