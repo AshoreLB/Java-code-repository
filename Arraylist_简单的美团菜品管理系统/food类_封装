@@ -1,0 +1,41 @@
+package hi;
+
+public class food {
+    private String name;
+    private double price;
+    private String describle;
+
+
+    public food(){
+
+    }
+    public food(String name, double price, String describle) {
+        this.name = name;
+        this.price = price;
+        this.describle = describle;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public double getPrice() {
+        return price;
+    }
+
+    public void setPrice(double price) {
+        this.price = price;
+    }
+
+    public String getDescrible() {
+        return describle;
+    }
+
+    public void setDescrible(String describle) {
+        this.describle = describle;
+    }
+}
