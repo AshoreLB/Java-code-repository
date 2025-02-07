@@ -1,0 +1,18 @@
+package hi;
+
+import java.util.ArrayList;
+import java.util.Random;
+import java.util.Scanner;
+
+public class test {
+    public static void main(String[] args) {
+        //给菜品的名字 价格 描述封装
+        foodOperation ff = new foodOperation();
+        ff.start();
+
+    }
+
+
+}
+
+
