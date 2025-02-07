@@ -1,0 +1,92 @@
+package hi;
+
+import javax.imageio.stream.ImageInputStream;
+import javax.swing.*;
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class foodOperation {
+    //准备一个容器负责上架全部菜品
+    ArrayList<food> allfood = new ArrayList();
+
+
+    public void start() {
+        while (true) {
+            System.out.println("====商家管理系统====");
+            System.out.println("1 上架菜品");
+            System.out.println("2 下架菜品");
+            System.out.println("3 展示所有菜品");
+            Scanner sc = new Scanner(System.in);
+            System.out.println("请您输入数字:");
+            int ls = sc.nextInt();
+            switch (ls) {
+                //1 上架菜品
+                case 1:
+                    addfood();
+                    break;
+                //下架菜品
+                case 2:
+                    minfood();
+                    break;
+                //展示所有菜品
+                case 3:
+                    showfood();
+                    break;
+                default:
+                    System.out.println("输入错误");
+
+            }
+        }
+
+
+    }
+
+    private void addfood() {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("上架菜品");
+        food f = new food();
+        System.out.println("菜品名称");
+        String name = sc.nextLine();
+        f.setName(name);
+        System.out.println("菜品价格");
+        double price = sc.nextDouble();
+        f.setPrice(price);
+        System.out.println("菜品描述");
+        String descriable = sc.nextLine();
+        f.setDescrible(descriable);
+        allfood.add(f);
+        System.out.println("上架成功!");
+    }
+
+    private void minfood() {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("下架菜品");
+        //food food = new food();
+        System.out.println("菜品名称");
+        String n = sc.nextLine();
+
+        for (int i = 0; i < allfood.size(); i++) {
+            food f =allfood.get(i);
+            if(f.getName().equals(n)){
+                allfood.remove(i);
+                System.out.println("菜品"+n+"下架成功!");
+                break;
+            }
+        }
+
+
+
+
+    }
+
+    private void showfood() {
+        System.out.println("====全部菜品====");
+        for (int i = 0; i < allfood.size(); i++) {
+            food f = allfood.get(i);
+            System.out.println(f.getName() + " " + f.getPrice() + " " + f.getDescrible());
+        }
+
+    }
+
+
+}
